@@ -19,7 +19,7 @@ A skill funciona como um **intermediário técnico** entre sua voz e a API da Go
 
 ## 3. Compartilhamento com terceiros
 As interações são enviadas para os seguintes serviços:
-- **Amazon Alexa**, conforme os [Termos de Uso da Alexa]([https://www.amazon.com.br/gp/help/customer/display.html?nodeId=202009000](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.amazon.com.br/gp/help/customer/display.html%3FnodeId%3D201809740&ved=2ahUKEwjLsIO63eKNAxX1q5UCHW_jLjUQFnoECAcQAQ&usg=AOvVaw119qzTBDt-E0P93g3KYKW-)).
+- **Amazon Alexa**, conforme os [Termos de Uso da Alexa](https://www.amazon.com.br/gp/help/customer/display.html%3FnodeId%3D201809740&ved=2ahUKEwjLsIO63eKNAxX1q5UCHW_jLjUQFnoECAcQAQ&usg=AOvVaw119qzTBDt-E0P93g3KYKW-).
 - **Google Gemini API**, Suas interações são processadas pelos serviços do Google e estão sujeitas à [Política de Privacidade da Google](https://policies.google.com/privacy) e aos [Termos Adicionais de Serviço da API do Gemini](https://ai.google.dev/gemini-api/terms?hl=pt-BR). Ao usar esta skill, você concorda com as práticas de privacidade e os termos de serviço do Google aplicáveis.
 
 A skill "Sabe Tudo" não compartilha seus dados com nenhuma outra entidade.
