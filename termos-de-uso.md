@@ -14,7 +14,7 @@ Apesar de ser uma ferramenta poderosa, é importante entender as limitações da
  * Disponibilidade: A disponibilidade e o desempenho da skill dependem de fatores externos, como a estabilidade da internet, o funcionamento dos servidores da Amazon Alexa e da API do Gemini. Não garantimos que a skill estará sempre disponível, sem interrupções ou erros.
 
 ## 3. Privacidade
-O uso da skill está sujeito à [Política de Privacidade](https://github.com/johnKoester/Sabe-Tudo/blob/main/politica-de-privacidade.md).
+O uso da skill está sujeito à [Política de Privacidade](https://johnkoester.github.io/Sabe-Tudo/politica-de-privacidade).
 
 ## 4. Direitos de Propriedade Intelectual
 Todo o conteúdo, logotipos e design da skill "Sabe Tudo" são propriedade do desenvolvedor. Você não está autorizado a copiar, modificar, distribuir ou usar qualquer parte da skill ou seu conteúdo para fins comerciais sem permissão expressa por escrito do desenvolvedor.
