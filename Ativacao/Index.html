@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sabe Tudo - Ativação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+
+    h1 {
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002f5c;
+    }
+
+    #mensagem {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ativação do Sabe Tudo</h1>
+  <p>Insira abaixo o código de ativação recebido após o pagamento.</p>
+
+  <input type="text" id="codigo" placeholder="Digite seu código" />
+  <button onclick="ativar()">Ativar</button>
+
+  <div id="mensagem"></div>
+
+  <script>
+    async function ativar() {
+      const codigo = document.getElementById("codigo").value.trim();
+      const mensagemEl = document.getElementById("mensagem");
+
+      if (!codigo) {
+        mensagemEl.textContent = "Por favor, insira um código válido.";
+        mensagemEl.style.color = "red";
+        return;
+      }
+
+      // Simulação temporária de sucesso
+      // Substitua por chamada real ao Lambda quando disponível
+      mensagemEl.textContent = "✅ Código ativado com sucesso!";
+      mensagemEl.style.color = "green";
+
+      // Exemplo de como seria com fetch:
+      /*
+      try {
+        const response = await fetch('https://sua-api.com/validar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ codigo })
+        });
+
+        const data = await response.json();
+        if (data.sucesso) {
+          mensagemEl.textContent = "✅ Código ativado com sucesso!";
+          mensagemEl.style.color = "green";
+        } else {
+          mensagemEl.textContent = "❌ Código inválido ou expirado.";
+          mensagemEl.style.color = "red";
+        }
+      } catch (error) {
+        mensagemEl.textContent = "Erro ao validar o código.";
+        mensagemEl.style.color = "red";
+      }
+      */
+    }
+  </script>
+</body>
+</html>
