@@ -79,15 +79,18 @@
         const result = await resp.json();
 
         if (resp.ok && result.sucesso) {
-          mensagem.textContent = 'Ativação realizada com sucesso!';
+          mensagem.textContent = '✅ Código ativado com sucesso!';
           mensagem.className = 'success';
+          mensagem.style.color = "green";
         } else {
           mensagem.textContent = result.mensagem || 'Código inválido ou expirado.';
           mensagem.className = 'error';
+          mensagem.style.color = "red";
         }
       } catch (err) {
         mensagem.textContent = 'Erro ao validar o código.';
         mensagem.className = 'error';
+        mensage.style.color = "red";
       }
     }
   </script>
