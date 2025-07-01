@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teste API Sabe Tudo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 10px;
+    background: #f5f5f5;
+  }
+  label, input, button {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+    height: 150px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Teste API Sabe Tudo</h1>
+
+<label for="userId">User ID Alexa:</label>
+<input type="text" id="userId" placeholder="Ex: amzn1.account.xxxxx" />
+
+<label for="authKey">Auth Key:</label>
+<input type="text" id="authKey" placeholder="Sua chave de autorização" />
+
+<button id="btnTestar">Testar API</button>
+
+<h2>Resposta da API:</h2>
+<textarea id="resposta" readonly></textarea>
+
+<script>
+  const btn = document.getElementById('btnTestar');
+  const respostaEl = document.getElementById('resposta');
+
+  btn.addEventListener('click', () => {
+    const userId = document.getElementById('userId').value.trim();
+    const authKey = document.getElementById('authKey').value.trim();
+
+    if (!userId || !authKey) {
+      alert('Preencha User ID e Auth Key');
+      return;
+    }
+
+    respostaEl.value = 'Enviando requisição...';
+
+    fetch('https://3wrdrwv8i7.execute-api.us-east-1.amazonaws.com/SabeTudoAtivacao', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ userId, authKey })
+    })
+    .then(response => response.json())
+    .then(data => {
+      respostaEl.value = JSON.stringify(data, null, 2);
+    })
+    .catch(err => {
+      respostaEl.value = 'Erro: ' + err.message;
+    });
+  });
+</script>
+
+</body>
+</html>
