@@ -66,27 +66,36 @@
 
   <script>
     async function validarCodigo() {
-      const codigo = document.getElementById("codigo").value.toUpperCase();
-      const mensagem = document.getElementById("mensagem");
-      const pagamento = document.getElementById("pagamento");
-      mensagem.innerText = "Validando código...";
+  const codigo = document.getElementById("codigo").value.toUpperCase();
+  const mensagem = document.getElementById("mensagem");
+  const pagamento = document.getElementById("pagamento");
+  mensagem.innerText = "Validando código...";
 
-      try {
-        const resposta = await fetch("https://3wrdrwv8i7.execute-api.us-east-1.amazonaws.com/prod/SabeTudoAtivacao?codigo=" + codigo);
-        const resultado = await resposta.json();
+  try {
+    const resposta = await fetch("https://3wrdrwv8i7.execute-api.us-east-1.amazonaws.com/prod/SabeTudoAtivacao", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ codigo: codigo })
+    });
 
-        if (resposta.ok && resultado.status === "ok") {
-          mensagem.innerText = "✅ Código válido! Agora escolha uma forma de pagamento.";
-          pagamento.style.display = "block";
-        } else {
-          mensagem.innerText = "❌ Código inválido ou já utilizado.";
-          pagamento.style.display = "none";
-        }
-      } catch (erro) {
-        mensagem.innerText = "⚠️ Erro ao validar. Tente novamente.";
-        pagamento.style.display = "none";
-      }
+    const resultado = await resposta.json();
+
+    if (resposta.ok && resultado.status === "ok") {
+      mensagem.innerText = "✅ Código válido! Agora escolha uma forma de pagamento.";
+      pagamento.style.display = "block";
+    } else {
+      mensagem.innerText = "❌ Código inválido ou já utilizado.";
+      pagamento.style.display = "none";
     }
+  } catch (erro) {
+    mensagem.innerText = "⚠️ Erro ao validar. Tente novamente.";
+    pagamento.style.display = "none";
+    console.error("Erro ao validar:", erro);
+  }
+}
+
   </script>
 </body>
 </html>
