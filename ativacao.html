@@ -81,7 +81,7 @@
     });
 
     const resultado = await resposta.json();
-
+    console.log(resultado);
     if (resposta.ok && resultado.status === "ok") {
       mensagem.innerText = "✅ Código válido! Agora escolha uma forma de pagamento.";
       pagamento.style.display = "block";
